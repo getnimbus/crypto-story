@@ -28,11 +28,11 @@
 		rel="stylesheet" />
 	<link href="https://assets.bwbx.io/s3/navi/css/components/en/footer/footer-68507ae2cd.css" rel="stylesheet" />
 	<link rel="stylesheet" href="./styles/app.css" />
-	<script src="index.js"></script>
 </head>
 <body>
 	<main class="dvz-content main">
-		<header class="svelte-fbo1ch light done">
+		<!-- header -->
+		<header class="svelte-fbo1ch light done header">
 			<div class="video-wrapper svelte-fbo1ch"><video preload="none" poster="" loading="eager" width="500" height="750"
 					class="svelte-6vyh81" playsinline="">
 					<source id="src-mp4"
@@ -59,6 +59,7 @@
 				</div>
 			</div>
 		</header>
+
 		<astro-island uid="1VAM27" component-url="/feature/2022-the-crypto-story/NavItems.a61d2df1.js"
 			component-export="default" renderer-url="/feature/2022-the-crypto-story/client.b27523fa.js"
 			props="{&quot;verbose&quot;:[0,true]}" client="load"
@@ -122,49 +123,69 @@
 				</div>
 			</section>
 		</astro-island>
+
 		<astro-island uid="ZtdHfz" component-url="/feature/2022-the-crypto-story/Nav.bb72f97c.js" component-export="default"
 			renderer-url="/feature/2022-the-crypto-story/client.b27523fa.js" props="{}" client="load"
 			opts="{&quot;name&quot;:&quot;Nav&quot;,&quot;value&quot;:true}" await-children="">
-			<nav id="nav-bar" class="nav-wrapper svelte-1b8ak1z pinned">
+			<nav id="nav-bar" class="nav-wrapper svelte-1b8ak1z">
 				<section class="nav-bar svelte-1b8ak1z">
-					<div class="nav-bar-menu-button-container svelte-1b8ak1z"><button class="nav-bar-menu-button svelte-1b8ak1z"><span
-								class="nav-bar-menu-button-text svelte-1b8ak1z">Menu</span> <span
-								class="nav-bar-menu-button-icon svelte-1b8ak1z">↓</span></button></div>
-					<div class="nav-bar-title svelte-1b8ak1z" style="--percent:9;">Part I: Ledgers, Bitcoin, Blockchains</div>
-					<div class="nav-bar-button-wrapper svelte-1b8ak1z"><button
-							class="nav-bar-left-button nav-bar-button svelte-1b8ak1z" disabled="">◄</button> <button
-							class="nav-bar-right-button nav-bar-button svelte-1b8ak1z">►</button></div>
+					<div class="nav-bar-menu-button-container svelte-1b8ak1z">
+						<button class="nav-bar-menu-button svelte-1b8ak1z">
+							<span class="nav-bar-menu-button-text svelte-1b8ak1z">Menu</span> 
+							<span class="nav-bar-menu-button-icon svelte-1b8ak1z">↓</span>
+						</button>
+					</div>
+					<div class="nav-bar-title svelte-1b8ak1z" style="--percent:0;">Part I: Ledgers, Bitcoin, Blockchains</div>
+					<div class="nav-bar-button-wrapper svelte-1b8ak1z">
+						<button class="nav-bar-left-button nav-bar-button svelte-1b8ak1z" disabled>◄</button> 
+						<button class="nav-bar-right-button nav-bar-button svelte-1b8ak1z">►</button>
+					</div>
 				</section>
 				<div class="fixed-overlay-wrapper svelte-1b8ak1z">
-					<section class="wrapper svelte-a6jqfg">
+					<section class="wrapper svelte-a6jqfg navbar-hidden">
 						<div class="nav-item svelte-a6jqfg">
 							<div class="nav-item-text svelte-a6jqfg">
 								<div class="nav-item-number svelte-a6jqfg"><span class="mobile-hint svelte-a6jqfg">Part </span>I</div>
-								<p class="nav-item-heading svelte-a6jqfg"><a href="#ledgers-bitcoin-blockchains">Ledgers, Bitcoin,
-										Blockchains</a></p>
+								<p class="nav-item-heading svelte-a6jqfg">
+									<a href="#ledgers-bitcoin-blockchains">Ledgers, Bitcoin, Blockchains</a>
+								</p>
 								<ol type="“A”" class="svelte-a6jqfg">
-									<li class="item svelte-a6jqfg"><a href="#life-in-databases" class="svelte-a6jqfg">Life in Databases</a>
+									<li class="item svelte-a6jqfg">
+										<a href="#life-in-databases" class="svelte-a6jqfg">Life in Databases</a>
 									</li>
-									<li class="item svelte-a6jqfg"><a href="#what-if-you-dont-like-it" class="svelte-a6jqfg">What If You Don’t
-											Like It?</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#digital-cash" class="svelte-a6jqfg">Digital Cash</a> </li>
+									<li class="item svelte-a6jqfg">
+										<a href="#what-if-you-dont-like-it" class="svelte-a6jqfg">What If You Don’t Like It?</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#digital-cash" class="svelte-a6jqfg">Digital Cash</a>
+									</li>
 								</ol>
 							</div>
 						</div>
 						<div class="nav-item svelte-a6jqfg">
 							<div class="nav-item-text svelte-a6jqfg">
 								<div class="nav-item-number svelte-a6jqfg"><span class="mobile-hint svelte-a6jqfg">Part </span>II</div>
-								<p class="nav-item-heading svelte-a6jqfg"><a href="#what-does-it-mean">What Does It Mean?</a></p>
+								<p class="nav-item-heading svelte-a6jqfg">
+									<a href="#what-does-it-mean">What Does It Mean?</a>
+								</p>
 								<ol type="“A”" class="svelte-a6jqfg">
-									<li class="item svelte-a6jqfg"><a href="#a-store-of-value" class="svelte-a6jqfg">A Store of Value</a>
+									<li class="item svelte-a6jqfg">
+										<a href="#a-store-of-value" class="svelte-a6jqfg">A Store of Value</a>
 									</li>
-									<li class="item svelte-a6jqfg"><a href="#a-distributed-computer" class="svelte-a6jqfg">A Distributed
-											Computer</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#a-slow-database" class="svelte-a6jqfg">A Slow Database</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#web3" class="svelte-a6jqfg">Web3</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#uncensorable-ledgers" class="svelte-a6jqfg">Uncensorable
-											Ledgers</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#digital-scarcity" class="svelte-a6jqfg">Digital Scarcity</a>
+									<li class="item svelte-a6jqfg">
+										<a href="#a-distributed-computer"class="svelte-a6jqfg">A Distributed Computer</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#a-slow-database" class="svelte-a6jqfg">A Slow Database</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#web3" class="svelte-a6jqfg">Web3</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#uncensorable-ledgers" class="svelte-a6jqfg">Uncensorable Ledgers</a>
+										</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#digital-scarcity" class="svelte-a6jqfg">Digital Scarcity</a>
 									</li>
 								</ol>
 							</div>
@@ -172,15 +193,24 @@
 						<div class="nav-item svelte-a6jqfg">
 							<div class="nav-item-text svelte-a6jqfg">
 								<div class="nav-item-number svelte-a6jqfg"><span class="mobile-hint svelte-a6jqfg">Part </span>III</div>
-								<p class="nav-item-heading svelte-a6jqfg"><a href="#the-crypto-financial-system">The Crypto Financial
-										System</a></p>
+								<p class="nav-item-heading svelte-a6jqfg">
+									<a href="#the-crypto-financial-system">The Crypto Financial System</a>
+								</p>
 								<ol type="“A”" class="svelte-a6jqfg">
-									<li class="item svelte-a6jqfg"><a href="#keys-coins-drive-dump" class="svelte-a6jqfg">Your Keys, Your
-											Coins, Your Hard Drive in a Garbage Dump</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#cefi" class="svelte-a6jqfg">CeFi</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#stablecoins" class="svelte-a6jqfg">Stablecoins</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#defi" class="svelte-a6jqfg">DeFi</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#reinventing-2008" class="svelte-a6jqfg">Reinventing 2008</a>
+									<li class="item svelte-a6jqfg">
+										<a href="#keys-coins-drive-dump" class="svelte-a6jqfg">Your Keys, Your Coins, Your Hard Drive in a Garbage Dump</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#cefi" class="svelte-a6jqfg">CeFi</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#stablecoins" class="svelte-a6jqfg">Stablecoins</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#defi" class="svelte-a6jqfg">DeFi</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#reinventing-2008" class="svelte-a6jqfg">Reinventing 2008</a>
 									</li>
 								</ol>
 							</div>
@@ -188,12 +218,22 @@
 						<div class="nav-item svelte-a6jqfg">
 							<div class="nav-item-text svelte-a6jqfg">
 								<div class="nav-item-number svelte-a6jqfg"><span class="mobile-hint svelte-a6jqfg">Part </span>IV</div>
-								<p class="nav-item-heading svelte-a6jqfg"><a href="#trust-money-community">Trust, Money, Community</a></p>
+								<p class="nav-item-heading svelte-a6jqfg">
+									<a href="#trust-money-community"">Trust, Money, Community</a>
+								</p>
 								<ol type="“A”" class="svelte-a6jqfg">
-									<li class="item svelte-a6jqfg"><a href="#trust" class="svelte-a6jqfg">Trust</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#money" class="svelte-a6jqfg">Money</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#community" class="svelte-a6jqfg">Community</a> </li>
-									<li class="item svelte-a6jqfg"><a href="#finance" class="svelte-a6jqfg">Finance</a> </li>
+									<li class="item svelte-a6jqfg">
+										<a href="#trust" class="svelte-a6jqfg">Trust</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#money" class="svelte-a6jqfg">Money</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#community" class="svelte-a6jqfg">Community</a>
+									</li>
+									<li class="item svelte-a6jqfg">
+										<a href="#finance" class="svelte-a6jqfg">Finance</a>
+									</li>
 								</ol>
 							</div>
 						</div>
@@ -201,6 +241,7 @@
 				</div>
 			</nav>
 		</astro-island>
+
 		<div class="inner">
 				<section class="intro svelte-nbe5us"><p></p><p>There was a moment not so long ago when I thought, “What if I’ve had this crypto thing all wrong?” I’m a doubting normie who, if I’m being honest, hasn’t always understood this alternate universe that’s been percolating and expanding for more than a decade now. If you’re a disciple, this new dimension is the future. If you’re a skeptic, this upside-down world is just a modern Ponzi scheme that’s going to end badly—and the recent “crypto winter” is evidence of its long-overdue ending. But crypto has dug itself into finance, into technology, and into our heads. And if crypto isn’t going away, we’d better attempt to <a href="https://www.bloomberg.com/news/features/2022-10-25/10-takeaways-from-matt-levine-s-the-crypto-story" class="dvz-t-allow" target="_blank" rel="noopener" data-terminal="NSN RKAXPAT0AFB6">understand it</a>. Which is why we asked the finest finance writer around, Matt Levine of <a href="https://www.bloomberg.com/opinion" target="_blank" rel="noopener">Bloomberg Opinion</a>, to write a cover-to-cover issue of <em>Bloomberg Businessweek</em>, something a single author has done only one other time in the magazine’s 93-year history (“<a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/" class="dvz-t-allow" target="_blank" rel="noopener" data-terminal="NSN NPS1C26JTSE9">What <em>Is</em> Code?</a>,” by Paul Ford). What follows is his brilliant explanation of what this maddening, often absurd, and always fascinating technology means, and where it might go. —<em>Joel Weber, Editor,</em> Bloomberg Businessweek</p><p></p><div class="tout svelte-2wf76k"><section class="svelte-eymltr"><figure class="svelte-eymltr">
 
@@ -2722,6 +2763,8 @@
 		</div>
 		</div>
 	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="main.js"></script>
 </body>
 	
 </html>
