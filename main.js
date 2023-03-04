@@ -53,7 +53,6 @@ $(document).ready(function () {
     if (lastScrollTop < navbarHeaderHeight + headerHeight) {
       $(".nav-wrapper").removeClass("pinned");
       $(".fixed-overlay-wrapper").removeClass("active");
-
       if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
@@ -67,16 +66,49 @@ $(document).ready(function () {
       $(".nav-wrapper").addClass("pinned");
     }
 
+    let sectionList = [];
+    const windowHeight = $(window).height();
+    const scroll = $(window).scrollTop();
+
     $(".inner > a")
       .not(":last")
       .each(function (i) {
         const offsetTop = $(this).offset().top;
         const text = $(this).text();
+        sectionList.push({ index: i, offsetTop });
         if (lastScrollTop > offsetTop - 100) {
           const selected = partList.filter((item) => item.text === text);
           $(".nav-bar-title").text(selected[0].title);
         }
       });
+
+    const listHeightEachSection = sectionList.map((item, index) => {
+      if (index < 3) {
+        return {
+          sectionHeight:
+            sectionList[index + 1].offsetTop - sectionList[index].offsetTop,
+          offsetTop: item.offsetTop,
+        };
+      } else {
+        return {
+          sectionHeight: windowHeight - item.offsetTop,
+          offsetTop: item.offsetTop,
+        };
+      }
+    });
+
+    listHeightEachSection.map((item) => {
+      if (
+        scroll >= item.offsetTop &&
+        scroll < item.offsetTop + item.sectionHeight
+      ) {
+        const visiblePercent = Math.round(
+          ((scroll - item.offsetTop) / (item.sectionHeight - windowHeight)) *
+            100
+        );
+        $(".nav-bar-title").attr("style", `--percent: ${visiblePercent};`);
+      }
+    });
 
     lastScrollTop = st;
   });
