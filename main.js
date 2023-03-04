@@ -24,7 +24,6 @@ const partList = [
 $(document).ready(function () {
   $(".nav-bar-menu-button").click(function () {
     $(".fixed-overlay-wrapper").toggleClass("active");
-
     if (
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
@@ -67,6 +66,7 @@ $(document).ready(function () {
     }
 
     let sectionList = [];
+    const mainPageHeight = $(".inner").height();
     const windowHeight = $(window).height();
     const scroll = $(window).scrollTop();
 
@@ -91,7 +91,7 @@ $(document).ready(function () {
         };
       } else {
         return {
-          sectionHeight: windowHeight - item.offsetTop,
+          sectionHeight: mainPageHeight - item.offsetTop,
           offsetTop: item.offsetTop,
         };
       }
