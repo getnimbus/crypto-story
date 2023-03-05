@@ -45,8 +45,12 @@ $(document).ready(function () {
 
   const navbarHeaderHeight = $(".wrapper").height();
   const headerHeight = $("header").height();
+  const prevBtn = $(".nav-bar-left-button");
+  const nextBtn = $(".nav-bar-right-button");
   let lastScrollTop = 0;
-  $(window).scroll(function (event) {
+
+  $(window).scroll(handleScrollEvent);
+  function handleScrollEvent() {
     let st = $(this).scrollTop();
 
     if (lastScrollTop < navbarHeaderHeight + headerHeight) {
@@ -68,7 +72,7 @@ $(document).ready(function () {
     let sectionList = [];
     const mainPageHeight = $(".inner").height();
     const windowHeight = $(window).height();
-    const scroll = $(window).scrollTop();
+    const windowScroll = $(window).scrollTop();
 
     $(".inner > a")
       .not(":last")
@@ -97,48 +101,77 @@ $(document).ready(function () {
       }
     });
 
-    listHeightEachSection.map((item) => {
+    const percentSectionList = listHeightEachSection.map((item) => {
       if (
-        scroll >= item.offsetTop &&
-        scroll < item.offsetTop + item.sectionHeight
+        windowScroll >= item.offsetTop &&
+        windowScroll < item.offsetTop + item.sectionHeight
       ) {
         const visiblePercent = Math.round(
-          ((scroll - item.offsetTop) / (item.sectionHeight - windowHeight)) *
+          ((windowScroll - item.offsetTop) /
+            (item.sectionHeight - windowHeight)) *
             100
         );
-        $(".nav-bar-title").attr("style", `--percent: ${visiblePercent};`);
+        $(".nav-bar-title").attr(
+          "style",
+          `--percent: ${visiblePercent > 100 ? 0 : visiblePercent};`
+        );
+        return visiblePercent > 100 ? 0 : visiblePercent;
       }
     });
 
+    if (percentSectionList[0] === undefined || percentSectionList[0]) {
+      prevBtn.prop("disabled", true);
+      nextBtn.prop("disabled", false);
+    }
+    if (percentSectionList[1] || percentSectionList[0] === 0) {
+      nextBtn.prop("disabled", false);
+      prevBtn.prop("disabled", false);
+    }
+    if (percentSectionList[2] || percentSectionList[1] === 0) {
+      nextBtn.prop("disabled", false);
+      prevBtn.prop("disabled", false);
+    }
+    if (
+      percentSectionList[3] ||
+      percentSectionList[2] === 0 ||
+      percentSectionList[3] === 0
+    ) {
+      nextBtn.prop("disabled", true);
+      prevBtn.prop("disabled", false);
+    }
+
     lastScrollTop = st;
+  }
+
+  nextBtn.click(function () {
+    const title = $(".nav-bar-title").text();
+    const selectedSection = partList.filter((item) => item.title === title);
+    const index = partList.indexOf(selectedSection[0]);
+
+    if (index < 3) {
+      nextBtn.prop("disabled", false);
+      prevBtn.prop("disabled", false);
+      document.location.href = partList[index + 1].url;
+      $(".nav-bar-title").text(partList[index + 1].title);
+    } else {
+      prevBtn.prop("disabled", false);
+      nextBtn.prop("disabled", true);
+    }
   });
 
-  let number = 0;
-  $(".nav-bar-right-button").click(function () {
-    number++;
-    document.location.href = partList[number].url;
-    $(".nav-bar-title").text(partList[number].title);
-    if (number === 3) {
-      $(".nav-bar-left-button").prop("disabled", false);
-      $(".nav-bar-right-button").prop("disabled", true);
-    }
-    if (number >= 1 && number < 3) {
-      $(".nav-bar-right-button").prop("disabled", false);
-      $(".nav-bar-left-button").prop("disabled", false);
-    }
-  });
+  prevBtn.click(function () {
+    const title = $(".nav-bar-title").text();
+    const selectedSection = partList.filter((item) => item.title === title);
+    const index = partList.indexOf(selectedSection[0]);
 
-  $(".nav-bar-left-button").click(function () {
-    number--;
-    document.location.href = partList[number].url;
-    $(".nav-bar-title").text(partList[number].title);
-    if (number === 0) {
-      $(".nav-bar-left-button").prop("disabled", true);
-      $(".nav-bar-right-button").prop("disabled", false);
-    }
-    if (number >= 1 && number < 3) {
-      $(".nav-bar-right-button").prop("disabled", false);
-      $(".nav-bar-left-button").prop("disabled", false);
+    if (index > 0) {
+      nextBtn.prop("disabled", false);
+      prevBtn.prop("disabled", false);
+      document.location.href = partList[index - 1].url;
+      $(".nav-bar-title").text(partList[index - 1].title);
+    } else {
+      prevBtn.prop("disabled", true);
+      nextBtn.prop("disabled", false);
     }
   });
 });
